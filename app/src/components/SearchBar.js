@@ -27,7 +27,7 @@ class SearchBar extends Component {
 
   render() {
 
-    const {location } = this.state
+    const {location, checkIn, checkOut } = this.state
 
     return (
       <div className='search'>
@@ -53,7 +53,7 @@ class SearchBar extends Component {
             <DatePicker
               className="search-booking--date-picker"
               dateFormat="DD/MM/YYYY"
-              selected={this.state.checkIn}
+              selected={checkIn}
               onChange={(date) => this.setState({checkIn: date})}
             />
           </div>
@@ -62,7 +62,7 @@ class SearchBar extends Component {
             <DatePicker
               className="search-booking--date-picker"
               dateFormat="DD/MM/YYYY"
-              selected={this.state.checkOut}
+              selected={checkOut}
               onChange={(date) => this.setState({checkOut: date})}
             />
           </div>

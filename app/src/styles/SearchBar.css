@@ -1,0 +1,62 @@
+.search {
+  background: #535657;
+  border: 1px solid #c3c3c3;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  align-items: center; }
+  @media (max-width: 1200px) {
+    .search {
+      flex-direction: column; } }
+  .search-location {
+    width: 71%;
+    padding: 0px 10px; }
+    @media (max-width: 1200px) {
+      .search-location {
+        width: 100%;
+        padding-top: 10px; } }
+    .search-location--input {
+      width: 80%;
+      height: 40px;
+      border: 1px solid #000;
+      border-radius: 5px 0px 0px 5px;
+      padding: 0px 10px;
+      font-size: 18px; }
+    .search-location--button {
+      width: 20%;
+      height: 40px;
+      padding-bottom: 2px;
+      background: #e61a84;
+      color: #fff;
+      border: 1px solid #000;
+      border-left: none;
+      border-radius: 0px 5px 5px 0px;
+      font-size: 18px; }
+      .search-location--button img {
+        margin-left: 10px; }
+        @media (max-width: 520px) {
+          .search-location--button img {
+            display: none; } }
+  .search-booking {
+    display: flex;
+    width: 29%;
+    padding: 10px 10px 20px;
+    border-left: 1px inset #999; }
+    @media (max-width: 1200px) {
+      .search-booking {
+        width: 100%; } }
+    .search-booking--date {
+      margin: 0px 5px; }
+      .search-booking--date p {
+        margin: 0 0 2px;
+        font-size: 12px;
+        color: #ccc; }
+      .search-booking--date-picker {
+        width: 130px;
+        text-align: center;
+        border-radius: 5px; }
+  .search-guests p {
+    margin: 0 0 2px;
+    font-size: 12px;
+    color: #ccc; }
+  .search-guests select {
+    height: 26px; }

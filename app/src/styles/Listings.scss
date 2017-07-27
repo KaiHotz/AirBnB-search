@@ -8,9 +8,25 @@
   }
   &-list {
     li {
-      padding: 20px;
+      position: relative;
+      padding: 15px;
       display: flex;
       border-bottom: 1px solid #c3c3c3;
+      .price {
+        position: absolute;
+        width: auto;
+        top: 15px;
+        right: 15px;
+        h1 {
+          margin: 0px 0px 3px;
+          font-size: 26px;
+          text-align: center;
+        }
+        p {
+          text-align: center;
+          font-size: 10px;
+        }
+      }
 
     }
     &--thumb {
@@ -54,10 +70,25 @@
     &--info {
       padding: 10px;
       h2 {
+        display: flex;
+        align-items: center;
         margin: 0px 0px 2px;
         color: #1d95cb;
+        span {
+          display: block;
+          height: 26px;
+          width: 22px;
+          margin-left: 5px;
+          overflow: hidden;
+          background-repeat: no-repeat;
+        }
+        .stared {
+          background-position: right center;
+        }
+        .unStared {
+          background-position: left center;
+        }
       }
-
     }
   }
 }

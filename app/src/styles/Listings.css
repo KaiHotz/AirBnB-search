@@ -6,9 +6,22 @@
     text-align: right;
     padding: 5px 20px; }
   .listings-list li {
-    padding: 20px;
+    position: relative;
+    padding: 15px;
     display: flex;
     border-bottom: 1px solid #c3c3c3; }
+    .listings-list li .price {
+      position: absolute;
+      width: auto;
+      top: 15px;
+      right: 15px; }
+      .listings-list li .price h1 {
+        margin: 0px 0px 3px;
+        font-size: 26px;
+        text-align: center; }
+      .listings-list li .price p {
+        text-align: center;
+        font-size: 10px; }
   .listings-list--thumb {
     position: relative;
     background-color: #fff; }
@@ -44,5 +57,18 @@
   .listings-list--info {
     padding: 10px; }
     .listings-list--info h2 {
+      display: flex;
+      align-items: center;
       margin: 0px 0px 2px;
       color: #1d95cb; }
+      .listings-list--info h2 span {
+        display: block;
+        height: 26px;
+        width: 22px;
+        margin-left: 5px;
+        overflow: hidden;
+        background-repeat: no-repeat; }
+      .listings-list--info h2 .stared {
+        background-position: right center; }
+      .listings-list--info h2 .unStared {
+        background-position: left center; }

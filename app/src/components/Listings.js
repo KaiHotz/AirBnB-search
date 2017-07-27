@@ -11,11 +11,12 @@ class Listings extends Component {
 
   renderListings () {
     return this.props.listings.map((listing, index) => {
+      const { thumbnail_url, name, favorited, address, price_formatted } = listing
       return (
         <li key={index}>
           <div className='listings-list--thumb'>
             <Image
-              src={listing.thumbnail_url}
+              src={thumbnail_url}
               ref={img => this.img = img}
               alt='thumb'
               fallbackSrc='images/default.jpg'
@@ -23,8 +24,18 @@ class Listings extends Component {
             <span className='listings-list--thumb-index'>{index + 1}</span>
           </div>
           <div className='listings-list--info'>
-            <h2>{listing.name}</h2>
-            <p>{listing.address}</p>
+            <h2>
+              {name}
+              <span
+                style={{backgroundImage: 'url(images/stars.png)'}}
+                className={favorited ? 'stared' : 'unStared'}
+              />
+            </h2>
+            <p>{address}</p>
+          </div>
+          <div className='price'>
+            <h1>{price_formatted}</h1>
+            <p>Per Night</p>
           </div>
         </li>
       )

@@ -27,7 +27,7 @@ class SearchBar extends Component {
 
   onSubmit() {
     const { location, checkIn, checkOut, guests } = this.state
-    const searchUrl = 'http://www.airbnb.com/search?location='
+    const searchUrl = 'http://www.airbnb.com/search'
 
     if(location === '' || checkOut === '') {
 
@@ -38,7 +38,7 @@ class SearchBar extends Component {
       let myCheckIn = moment(checkIn._d).format('MM/DD/YYYY')
       let myCheckOut = moment(checkOut._d).format('MM/DD/YYYY')
 
-      window.open(`${searchUrl}${location}&checkin=${myCheckIn}&checkout=${myCheckOut}&guests=${guests}`, '_blank')
+      window.open(`${searchUrl}?location=${location}&checkin=${myCheckIn}&checkout=${myCheckOut}&guests=${guests}`, '_blank')
     }
   }
 

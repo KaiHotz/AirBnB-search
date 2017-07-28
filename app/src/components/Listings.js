@@ -12,6 +12,9 @@ class Listings extends Component {
   renderListings () {
     return this.props.listings.map((listing, index) => {
       const { thumbnail_url, name, favorited, address, price_formatted } = listing
+
+      const favStar = favorited ? 'stared' : 'unStared'
+
       return (
         <li key={index}>
           <div className='listings-list--thumb'>
@@ -28,7 +31,7 @@ class Listings extends Component {
               {name}
               <span
                 style={{backgroundImage: 'url(images/stars.png)'}}
-                className={favorited ? 'stared' : 'unStared'}
+                className={favStar}
               />
             </h2>
             <p>{address}</p>

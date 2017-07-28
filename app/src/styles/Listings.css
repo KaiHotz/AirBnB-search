@@ -72,3 +72,5 @@
         background-position: right center; }
       .listings-list--info h2 .unStared {
         background-position: left center; }
+    .listings-list--info .user_thumb {
+      float: left; }

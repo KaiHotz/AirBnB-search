@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchListings } from '../actions'
+import Ratings from './Ratings'
 import Image from './Image'
 import '../styles/Listings.css'
 
@@ -11,9 +12,9 @@ class Listings extends Component {
 
   renderListings () {
     return this.props.listings.map((listing, index) => {
-      const { thumbnail_url, name, favorited, address, price_formatted } = listing
-
       const favStar = favorited ? 'stared' : 'unStared'
+
+      const { thumbnail_url, name, favorited, address, user_thumb, reviews_count, friends, super_host, price_formatted } = listing
 
       return (
         <li key={index}>
@@ -35,6 +36,18 @@ class Listings extends Component {
               />
             </h2>
             <p>{address}</p>
+            <Image
+              className='user_thumb'
+              src={user_thumb}
+              ref={img => this.img = img}
+              alt='user_thumb'
+              fallbackSrc='images/user.png'
+            />
+            <Ratings
+              reviews={reviews_count}
+              friends={friends}
+              superhost={super_host}
+            />
           </div>
           <div className='price'>
             <h1>{price_formatted}</h1>

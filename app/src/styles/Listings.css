@@ -6,6 +6,7 @@
     text-align: right;
     padding: 5px 20px; }
   .listings-list li {
+    cursor: pointer;
     position: relative;
     padding: 15px;
     display: flex;
@@ -22,6 +23,8 @@
       .listings-list li .price p {
         text-align: center;
         font-size: 10px; }
+    .listings-list li:hover {
+      background-color: rgba(195, 195, 195, 0.2); }
   .listings-list--thumb {
     position: relative;
     background-color: #fff; }

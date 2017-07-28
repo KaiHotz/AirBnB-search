@@ -10,14 +10,20 @@ class Listings extends Component {
     this.props.fetchListings()
   }
 
+  openListing (id) {
+    let url = `https://airbnb.com/rooms/${id}`
+    console.log(url)
+    window.open(url, '_blank')
+  }
+
   renderListings () {
     return this.props.listings.map((listing, index) => {
-      const { thumbnail_url, name, favorited, address, user_thumb, reviews_count, friends, super_host, price_formatted } = listing
+      const { id, thumbnail_url, name, favorited, address, user_thumb, reviews_count, friends, super_host, price_formatted } = listing
 
       const favStar = favorited ? 'stared' : 'unStared'
 
       return (
-        <li key={index}>
+        <li key={index} onClick={() => this.openListing(id)}>
           <div className='listings-list--thumb'>
             <Image
               src={thumbnail_url}

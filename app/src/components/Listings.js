@@ -18,7 +18,18 @@ class Listings extends Component {
 
   renderListings () {
     return this.props.listings.map((listing, index) => {
-      const { id, thumbnail_url, name, favorited, address, user_thumb, reviews_count, friends, super_host, price_formatted } = listing
+      const {
+              id,
+              thumbnail_url,
+              name,
+              favorited,
+              address,
+              user_thumb,
+              reviews_count,
+              friends,
+              super_host,
+              price_formatted
+            } = listing
 
       const favStar = favorited ? 'stared' : 'unStared'
 

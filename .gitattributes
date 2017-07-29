@@ -1,2 +1,2 @@
 $ cat .gitattributes
-app/src/index.js linguist-language=JavaScript
+*.* linguist-language=JavaScript

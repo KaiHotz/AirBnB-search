@@ -11,6 +11,10 @@
     padding: 15px;
     display: flex;
     border-bottom: 1px solid #c3c3c3; }
+    @media (max-width: 980px) {
+      .listings-list li {
+        flex-direction: column;
+        padding: 5px; } }
     .listings-list li .price {
       position: absolute;
       width: auto;
@@ -18,7 +22,7 @@
       right: 15px; }
       .listings-list li .price h1 {
         margin: 0px 0px 3px;
-        font-size: 26px;
+        font-size: 24px;
         text-align: center; }
       .listings-list li .price p {
         text-align: center;
@@ -27,7 +31,8 @@
       background-color: rgba(195, 195, 195, 0.2); }
   .listings-list--thumb {
     position: relative;
-    background-color: #fff; }
+    background-color: #fff;
+    max-width: 228px; }
     .listings-list--thumb:before, .listings-list--thumb:after {
       position: absolute;
       bottom: 15px;
@@ -59,11 +64,17 @@
       padding: 3px 3px 3px 2px; }
   .listings-list--info {
     padding: 10px; }
+    @media (max-width: 600px) {
+      .listings-list--info {
+        padding: 10px 5px; } }
     .listings-list--info h2 {
       display: flex;
       align-items: center;
       margin: 0px 0px 2px;
       color: #1d95cb; }
+      @media (max-width: 600px) {
+        .listings-list--info h2 {
+          font-size: 22px; } }
       .listings-list--info h2 span {
         display: block;
         height: 26px;

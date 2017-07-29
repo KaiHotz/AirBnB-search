@@ -32,6 +32,9 @@
       border-left: none;
       border-radius: 0px 5px 5px 0px;
       font-size: 18px;
+       @media (max-width: 360px) {
+        font-size: 14px;
+      }
       img {
         margin-left: 10px;
         @media (max-width: 520px) {
@@ -48,8 +51,14 @@
     @media (max-width: 1200px) {
       width: 100%;
     }
+    @media (max-width: 360px) {
+      flex-direction: column;
+    }
     &--date {
       margin: 0px 5px;
+      @media (max-width: 360px) {
+         margin: 5px 0px;
+      }
       p {
         margin: 0 0 2px;
         font-size: 12px;

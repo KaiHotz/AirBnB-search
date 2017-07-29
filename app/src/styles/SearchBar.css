@@ -31,6 +31,9 @@
       border-left: none;
       border-radius: 0px 5px 5px 0px;
       font-size: 18px; }
+      @media (max-width: 360px) {
+        .search-location--button {
+          font-size: 14px; } }
       .search-location--button img {
         margin-left: 10px; }
         @media (max-width: 520px) {
@@ -44,8 +47,14 @@
     @media (max-width: 1200px) {
       .search-booking {
         width: 100%; } }
+    @media (max-width: 360px) {
+      .search-booking {
+        flex-direction: column; } }
     .search-booking--date {
       margin: 0px 5px; }
+      @media (max-width: 360px) {
+        .search-booking--date {
+          margin: 5px 0px; } }
       .search-booking--date p {
         margin: 0 0 2px;
         font-size: 12px;

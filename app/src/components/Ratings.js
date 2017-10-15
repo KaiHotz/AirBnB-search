@@ -3,7 +3,7 @@ import '../styles/Ratings.css'
 
 const renderRatings = (props) => {
   return Object.keys(props).map((key, index) => {
-    if (props[key] === 0 || !props[key]) { } else {
+    if (props[key] && !props[key] === 0) {
       return (
         <div key={index} className='ratings-item'>
           <div className={key} style={{backgroundImage: 'url(images/badges.png)'}}>

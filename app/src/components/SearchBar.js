@@ -2,39 +2,37 @@ import React, { Component } from 'react'
 import DatePicker from 'react-datepicker'
 import moment from 'moment'
 import 'react-datepicker/dist/react-datepicker.css'
-import '../styles/SearchBar.css'
+import '@/styles/SearchBar.scss'
 
 class SearchBar extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      location: '',
-      checkIn: '',
-      checkOut: '',
-      guests: 1,
-      guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
-    }
+  state = {
+    location: '',
+    checkIn: '',
+    checkOut: '',
+    guests: 1,
+    guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
   }
 
   renderGuests = () => {
-    return this.state.guestArr.map((guests, index) => {
+    return this.state.guestArr.map((guests, i) => {
       return (
-        <option key={index} value={guests}>{guests}</option>
+        <option
+          key={i}
+          value={guests}
+        >
+          {guests}
+        </option>
       )
     })
   }
 
-  onSubmit() {
+  onSubmit () {
     const { location, checkIn, checkOut, guests } = this.state
     const searchUrl = 'http://www.airbnb.com/search'
 
-    if(location === '' || checkOut === '') {
-
-      alert('Please complete all the fields')
-
+    if (location === '' || checkOut === '') {
+      window.alert('Please complete all the fields')
     } else {
-
       let myCheckIn = moment(checkIn._d).format('MM/DD/YYYY')
       let myCheckOut = moment(checkOut._d).format('MM/DD/YYYY')
 
@@ -42,8 +40,8 @@ class SearchBar extends Component {
     }
   }
 
-  render() {
-    const {location, checkIn, checkOut } = this.state
+  render () {
+    const { location, checkIn, checkOut } = this.state
     return (
       <div className='search'>
         <div className='search-location'>
@@ -52,7 +50,7 @@ class SearchBar extends Component {
             type='text'
             placeholder='City'
             value={location}
-            onChange={(event) => this.setState({location: event.target.value})}
+            onChange={(e) => this.setState({location: e.target.value})}
           />
           <button
             className='search-location--button'
@@ -60,36 +58,39 @@ class SearchBar extends Component {
             type='button'
           >
           Search
-          <img src='images/search.png' alt='search icon' />
+          <img
+            src='images/search.png'
+            alt='search icon'
+          />
           </button>
         </div>
         <div className='search-booking'>
           <div className='search-booking--date'>
             <p>Check In</p>
             <DatePicker
-              className="search-booking--date-picker"
+              className='search-booking--date-picker'
               placeholderText='DD/MM/YYYY'
-              dateFormat="DD/MM/YYYY"
+              dateFormat='DD/MM/YYYY'
               selected={checkIn}
-              minDate={moment().add(1, "days")}
+              minDate={moment().add(1, 'days')}
               onChange={(date) => this.setState({checkIn: moment(date)})}
             />
           </div>
           <div className='search-booking--date'>
             <p>Check Out</p>
             <DatePicker
-              className="search-booking--date-picker"
+              className='search-booking--date-picker'
               placeholderText='DD/MM/YYYY'
-              dateFormat="DD/MM/YYYY"
+              dateFormat='DD/MM/YYYY'
               selected={checkOut}
-              minDate={moment(this.state.checkIn._d).add(2, "days")}
+              minDate={moment(this.state.checkIn._d).add(2, 'days')}
               onChange={(date) => this.setState({checkOut: moment(date)})}
             />
           </div>
           <div className='search-guests'>
             <p>Guests</p>
             <select
-              onChange={(event) => this.setState({guests: event.target.value})}
+              onChange={(e) => this.setState({guests: e.target.value})}
             >
               {this.renderGuests()}
             </select>

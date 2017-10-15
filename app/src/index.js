@@ -1,16 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './styles/Index.css'
-import App from './components/App'
 import { Provider } from 'react-redux'
-import { createStore, applyMiddleware } from 'redux'
-import promise from 'redux-promise'
-import reducers from './reducers'
+import configureStore from './store'
+import App from './containers/App'
 
-const createStoreWithMiddleware = applyMiddleware(promise)(createStore)
+const store = configureStore()
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>, document.getElementById('root')
-)
+const render = Component => {
+  ReactDOM.render(
+    <Provider store={store}>
+      <Component />
+    </Provider>
+    , document.querySelector('.root')
+  )
+}
+
+render(App)
+
+if (module.hot) {
+  module.hot.accept('./containers/App', () => {
+    const App = require('./containers/App').default
+    render(App)
+  })
+}

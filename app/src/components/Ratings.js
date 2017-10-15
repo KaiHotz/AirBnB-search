@@ -1,12 +1,18 @@
 import React from 'react'
-import '../styles/Ratings.css'
+import '@/styles/Ratings.scss'
 
 const renderRatings = (props) => {
-  return Object.keys(props).map((key, index) => {
-    if (props[key] && !props[key] === 0) {
+  return Object.keys(props).map((key, i) => {
+    if (props[key] || props[key] !== 0) {
       return (
-        <div key={index} className='ratings-item'>
-          <div className={key} style={{backgroundImage: 'url(images/badges.png)'}}>
+        <div
+          key={i}
+          className='ratings-item'
+        >
+          <div
+            className={key}
+            style={{backgroundImage: 'url(images/badges.png)'}}
+          >
             {props[key]}
           </div>
           <p>{key}</p>

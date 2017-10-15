@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Image = ({src, fallbackSrc, alt, ...other}) => {
-  let element
-  const changeSrc = newSrc => {
-    element.src = newSrc
+class Image extends Component {
+  changeSrc = newSrc => {
+    this.img.src = newSrc
   }
-  return (
-    <img src={src}
-      onError={() => changeSrc(fallbackSrc)}
-      ref={el => element = el}
-      alt={alt}
-      {...other} />
-  )
+
+  render () {
+    const { src, fallbackSrc, alt, ...other } = this.props
+    return (
+      <img src={src}
+        onError={() => this.changeSrc(fallbackSrc)}
+        ref={el => this.img = el}
+        alt={alt}
+        {...other} />
+    )
+  }
 }
 
 export default Image

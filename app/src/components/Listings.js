@@ -1,15 +1,9 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { fetchListings } from '../actions'
 import Ratings from './Ratings'
 import Image from './Image'
-import '../styles/Listings.css'
+import '@/styles/Listings.scss'
 
 class Listings extends Component {
-  componentDidMount () {
-    this.props.fetchListings()
-  }
-
   openListing (id) {
     let url = `https://airbnb.com/rooms/${id}`
     console.log(url)
@@ -34,7 +28,10 @@ class Listings extends Component {
       const favStar = favorited ? 'stared' : 'unStared'
 
       return (
-        <li key={index} onClick={() => this.openListing(id)}>
+        <li
+          key={index}
+          onClick={() => this.openListing(id)}
+        >
           <div className='listings-list--thumb'>
             <Image
               src={thumbnail_url}
@@ -48,7 +45,7 @@ class Listings extends Component {
             <h2>
               {name}
               <span
-                style={{backgroundImage: 'url(images/stars.png)'}}
+                style={{backgroundImage: 'url(/images/stars.png)'}}
                 className={favStar}
               />
             </h2>
@@ -91,8 +88,4 @@ class Listings extends Component {
   }
 }
 
-function mapStateToProps (state) {
-  return { listings: state.listings }
-}
-
-export default connect(mapStateToProps, { fetchListings })(Listings)
+export default Listings

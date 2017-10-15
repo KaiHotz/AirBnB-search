@@ -36,15 +36,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
       },
       {
         test: /\.(scss|sass|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({

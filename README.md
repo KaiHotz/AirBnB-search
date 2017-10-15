@@ -5,7 +5,7 @@ There are two methods for getting started with this repo.
 #### Familiar with Git?
 
 ```
-  > git clone git@github.com:SpecialKcl/React-Redux-Simple-Starter.git
+  > git clone git@github.com:SpecialKcl/AirBnB-search.git
   > cd AirBnB-search/app
   > npm install
   > npm start

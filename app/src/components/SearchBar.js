@@ -7,8 +7,8 @@ import '@/styles/SearchBar.scss'
 class SearchBar extends Component {
   state = {
     location: '',
-    checkIn: '',
-    checkOut: '',
+    checkIn: moment(),
+    checkOut: moment(),
     guests: 1,
     guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
   }
@@ -26,7 +26,19 @@ class SearchBar extends Component {
     })
   }
 
-  onSubmit () {
+  handleDateChange = dateInput => date => {
+    this.setState({
+      [dateInput]: moment(date)
+    })
+  }
+
+  handleInputChange = input => event => {
+    this.setState({
+      [input]: event.target.value
+    })
+  }
+
+  onSubmit = () => {
     const { location, checkIn, checkOut, guests } = this.state
     const searchUrl = 'http://www.airbnb.com/search'
 
@@ -50,18 +62,18 @@ class SearchBar extends Component {
             type='text'
             placeholder='City'
             value={location}
-            onChange={(e) => this.setState({location: e.target.value})}
+            onChange={this.handleInputChange('location')}
           />
           <button
             className='search-location--button'
-            onClick={() => this.onSubmit()}
+            onClick={this.onSubmit}
             type='button'
           >
           Search
-          <img
-            src='images/search.png'
-            alt='search icon'
-          />
+            <img
+              src='images/search.png'
+              alt='search icon'
+            />
           </button>
         </div>
         <div className='search-booking'>
@@ -73,7 +85,7 @@ class SearchBar extends Component {
               dateFormat='DD/MM/YYYY'
               selected={checkIn}
               minDate={moment().add(1, 'days')}
-              onChange={(date) => this.setState({checkIn: moment(date)})}
+              onChange={this.handleDateChange('checkIn')}
             />
           </div>
           <div className='search-booking--date'>
@@ -84,13 +96,13 @@ class SearchBar extends Component {
               dateFormat='DD/MM/YYYY'
               selected={checkOut}
               minDate={moment(this.state.checkIn._d).add(2, 'days')}
-              onChange={(date) => this.setState({checkOut: moment(date)})}
+              onChange={this.handleDateChange('checkOut')}
             />
           </div>
           <div className='search-guests'>
             <p>Guests</p>
             <select
-              onChange={(e) => this.setState({guests: e.target.value})}
+              onChange={this.handleInputChange('guests')}
             >
               {this.renderGuests()}
             </select>

@@ -22,8 +22,8 @@ class App extends Component {
   }
 }
 
-function mapStateToProps ({ listings }) {
-  return { listings }
-}
+const mapStateToProps = ({ listings }) => ({
+  listings
+})
 
 export default connect(mapStateToProps, { fetchListings })(App)

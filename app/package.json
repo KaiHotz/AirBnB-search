@@ -58,6 +58,6 @@
     "lint": "standard",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "build": "NODE_ENV=production npm run clean && webpack -p"
+    "build": "webpack --mode productio"
   }
 }

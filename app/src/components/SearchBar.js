@@ -13,19 +13,6 @@ class SearchBar extends Component {
     guestArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
   }
 
-  renderGuests = () => {
-    return this.state.guestArr.map((guests, i) => {
-      return (
-        <option
-          key={i}
-          value={guests}
-        >
-          {guests}
-        </option>
-      )
-    })
-  }
-
   handleDateChange = dateInput => date => {
     this.setState({
       [dateInput]: moment(date)
@@ -104,7 +91,16 @@ class SearchBar extends Component {
             <select
               onChange={this.handleInputChange('guests')}
             >
-              {this.renderGuests()}
+              {
+                this.state.guestArr.map((guests, i) => (
+                  <option
+                    key={`guest_${i}`}
+                    value={guests}
+                  >
+                    {guests}
+                  </option>
+                ))
+              }
             </select>
           </div>
         </div>

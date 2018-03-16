@@ -6,15 +6,6 @@
   "repository": "https://github.com/KaiHotz/AirBnB-search",
   "author": "Kai Hotz",
   "license": "ISC",
-  "standard": {
-    "parser": "babel-eslint",
-    "env": [
-      "jest"
-    ],
-    "globals": [
-      "fetch"
-    ]
-  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",

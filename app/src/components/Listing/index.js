@@ -1,6 +1,6 @@
-
 /*eslint-disable*/
 import React from 'react'
+import PropTypes from 'prop-types'
 import Ratings from '../Ratings'
 import Image from '../UI/Image'
 import './styles.scss'
@@ -9,19 +9,21 @@ const Listing = ({
   id,
   index,
   thumbnail_url,
+  user_thumb,
   name,
   favorited,
+  super_host,
   address,
-  user_thumb,
   reviews_count,
   friends,
-  super_host,
-  price_formatted
+  price_formatted,
+  onClick
 }) => {
   return (
     <li
       className='listings-list-item'
-      onClick={() => window.open(`https://airbnb.com/rooms/${id}`, '_blank')}
+      onClick={onClick}
+      role='list-item'
     >
       <div className='listings-list-item--thumb'>
         <Image
@@ -58,6 +60,21 @@ const Listing = ({
       </div>
     </li>
   )
+}
+
+Listing.propTypes = {
+  id: PropTypes.number.isRequired,
+  index: PropTypes.number.isRequired,
+  reviews_count: PropTypes.number.isRequired,
+  friends: PropTypes.number.isRequired,
+  thumbnail_url: PropTypes.string.isRequired,
+  user_thumb: PropTypes.string.isRequired,
+  price_formatted: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  favorited: PropTypes.bool.isRequired,
+  super_host: PropTypes.bool.isRequired,
+  address: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default Listing

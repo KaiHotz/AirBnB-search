@@ -34,7 +34,7 @@ const Input = ({
 
 Input.propTypes = {
   type: PropTypes.string,
-  onChange: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
   label: PropTypes.string,
   error: PropTypes.string,
   placeholder: PropTypes.string,
@@ -45,7 +45,6 @@ Input.propTypes = {
 
 Input.defaultProps = {
   type: 'text',
-  onChange: () => { },
   label: null,
   error: null,
   placeholder: null,

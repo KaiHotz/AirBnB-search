@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import yup from 'yup'
 import qs from 'qs'
 import Form from '../UI/Form'
-
+import Button from '../UI/Button'
 import './styles.scss'
 
 class Search extends Component {
@@ -53,13 +53,11 @@ class Search extends Component {
                 placeholder='City'
                 required
               />
-              <button onClick={handleSubmit}>
-                Search
-                <img
-                  src='assets/images/search.png'
-                  alt='search icon'
-                />
-              </button>
+              <Button
+                onClick={handleSubmit}
+                content='Search'
+                imgSrc='assets/images/search.png'
+              />
             </div>
             <div className='bookings'>
               <Form.DatePicker

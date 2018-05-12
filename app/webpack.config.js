@@ -11,6 +11,7 @@ const VENDOR_LIBS = [
   'prop-types',
   'react-redux',
   'react-router-dom',
+  'react-datepicker',
   'classnames',
   'fetch-jsonp',
   'formik',

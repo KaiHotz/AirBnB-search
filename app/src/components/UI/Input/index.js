@@ -11,9 +11,10 @@ const Input = ({
   onChange,
   placeholder,
   required,
+  className,
   ...rest
 }) => (
-  <div className={cx('input-wrapper', {'error': error})}>
+  <div className={cx('input-wrapper', className, {'error': error})}>
     {
       label &&
       <label htmlFor={name}>
@@ -38,6 +39,7 @@ Input.propTypes = {
   label: PropTypes.string,
   error: PropTypes.string,
   placeholder: PropTypes.string,
+  className: PropTypes.string,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
   name: PropTypes.string.isRequired
@@ -48,6 +50,7 @@ Input.defaultProps = {
   label: null,
   error: null,
   placeholder: null,
+  className: null,
   disabled: false,
   required: false
 }

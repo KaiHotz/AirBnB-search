@@ -11,6 +11,7 @@ class DatePicker extends Component {
     name: PropTypes.string.isRequired,
     label: PropTypes.string,
     placeholder: PropTypes.string,
+    className: PropTypes.string,
     error: PropTypes.string,
     disabled: PropTypes.bool,
     required: PropTypes.bool,
@@ -27,7 +28,8 @@ class DatePicker extends Component {
     error: null,
     disabled: false,
     required: false,
-    value: null
+    value: null,
+    className: null
   }
 
   handleChangeRaw = e => {
@@ -81,13 +83,14 @@ class DatePicker extends Component {
       minDate,
       maxDate,
       required,
+      className,
       ...rest
     } = this.props
 
     const momentDate = moment(value)
 
     return (
-      <div className={cx('datePicker-wrapper', {'error': error})}>
+      <div className={cx('datePicker-wrapper', className, {'error': error})}>
         {
           label &&
             <label

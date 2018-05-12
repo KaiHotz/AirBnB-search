@@ -13,7 +13,7 @@ const Select = ({
   error,
   className
 }) => (
-  <div className={cx('select-wrapper', {'error': error}, className)}>
+  <div className={cx('select-wrapper', className, {'error': error})}>
     {
       label &&
         <label htmlFor={name}>

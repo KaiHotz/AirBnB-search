@@ -6,12 +6,17 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 const VENDOR_LIBS = [
   'react',
   'redux',
-  'moment',
+  'recompose',
   'react-dom',
   'prop-types',
   'react-redux',
+  'react-router-dom',
+  'classnames',
   'fetch-jsonp',
-  'react-datepicker'
+  'formik',
+  'moment',
+  'qs',
+  'yup'
 ]
 
 module.exports = {
@@ -43,6 +48,10 @@ module.exports = {
       {
         test: /\.(scss|sass|css)$/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: ['file-loader']
       }
     ]
   },
@@ -59,7 +68,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new CopyWebpackPlugin([
-      { from: 'src/images', to: 'images' }
+      { from: 'src/assets', to: 'assets' }
     ])
   ]
 }

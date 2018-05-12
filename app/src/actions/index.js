@@ -8,11 +8,11 @@ export function fetchListings () {
   const request = fetchJsonp(`${ROOT_URL}`, {
     jsonpCallbackFunction: 'search_results'
   })
-  .then(response => response.json())
-  .then(json => json)
-  .catch((ex) => {
-    console.log('parsing failed', ex)
-  })
+    .then(response => response.json())
+    .then(json => json)
+    .catch((ex) => {
+      console.log('parsing failed', ex)
+    })
   return {
     type: FETCH_LISTINGS,
     payload: request

@@ -1,0 +1,117 @@
+.search {
+  background: #535657;
+  border: 1px solid #c3c3c3;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+  .location {
+    padding: 22px 10px 10px;
+    display: flex;
+    flex-grow: 5;
+    @media (max-width: 1200px) {
+      width: 100%;
+      padding-top: 10px;
+    }
+    .input-wrapper {
+      flex-grow: 2;
+      background-color: #fff;
+      border-radius: 5px 0 0 5px;
+      input {
+        height: 40px;
+        width: 100% ;
+        border: 1px solid #000;
+        padding: 0px 10px;
+        font-size: 18px;
+        border-radius: 5px 0 0 5px;
+      }
+      &.error {
+        input {
+          background-color: rgba(255, 0, 0, 0.5);
+        }
+      }
+    }
+    button {
+     flex-grow: 1;
+      height: 40px;
+      padding-bottom: 2px;
+      background: #e61a84;
+      color: #fff;
+      border: 1px solid #000;
+      border-left: none;
+      border-radius: 0 5px 5px 0;
+      font-size: 18px;
+       @media (max-width: 360px) {
+        font-size: 14px;
+      }
+      img {
+        margin-left: 10px;
+        @media (max-width: 520px) {
+          display: none;
+        }
+      }
+    }
+  }
+  .bookings {
+    display: flex;
+    padding: 13px 10px 20px;
+    border-left: 1px inset #999;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+    @media (max-width: 360px) {
+      flex-direction: column;
+    }
+    .datePicker-wrapper {
+      margin: 0px 5px;
+      @media (max-width: 360px) {
+         margin: 5px 0px;
+      }
+      label {
+        display: block;
+        margin: 0 0 5px;
+        font-size: 12px;
+        color: #ccc;
+      }
+      .react-datepicker__input-container {
+        background-color: #fff;
+        border-radius: 5px;
+        input {
+          text-align: center;
+          border-radius: 5px;
+          border: 1px solid #000;
+          height: 30px;
+          font-size: 16px;
+        }
+      }
+      &.error {
+        input {
+          background-color: rgba(255, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+  .guests {
+    padding: 13px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    .select-wrapper {
+      label {
+        margin: 0 0 5px;
+        font-size: 12px;
+        color: #ccc;
+        display: block;
+      }
+      select {
+        height: 30px;
+        width: 100%;
+        font-size: 16px;
+        border: 1px solid #000;
+      }
+    }
+  }
+}
+
+

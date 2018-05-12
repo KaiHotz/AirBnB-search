@@ -1,0 +1,9 @@
+.listings {
+   border: 1px solid #c3c3c3;
+  &-total {
+    border-bottom: 1px solid #c3c3c3;
+    background-color: #eeeeee;
+    text-align: right;
+    padding: 5px 20px;
+  }
+}

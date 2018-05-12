@@ -39,7 +39,7 @@ const Listing = ({
             className={favorited ? 'stared' : 'unStared'}
           />
         </h2>
-        <p>{address}</p>
+        <p className='address'>{address}</p>
         <Image
           className='user_thumb'
           src={user_thumb}

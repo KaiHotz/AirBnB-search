@@ -16,7 +16,7 @@ const Ratings = (props) => {
                   className={key}
                   style={{ backgroundImage: 'url(assets/images/badges.png)' }}
                 >
-                  {props[key]}
+                  <p>{props[key]}</p>
                 </div>
                 <p>{key}</p>
               </div>

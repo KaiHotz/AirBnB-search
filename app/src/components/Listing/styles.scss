@@ -21,6 +21,8 @@
     p {
       text-align: center;
       font-size: 10px;
+      margin-top: 0px;
+      color: #999;
     }
   }
   &:hover {
@@ -29,7 +31,8 @@
   &--thumb {
     position: relative;
     background-color: #fff;
-    max-width: 228px;
+    max-width: 170px;
+    height: 105px;
     &:before,
     &:after {
       position: absolute;
@@ -49,6 +52,7 @@
       transform: rotate(3deg);
     }
     img {
+      width: 153px;
       padding: 5px;
       border: 1px solid #000;
     }
@@ -66,7 +70,7 @@
     }
   }
   &--info {
-    padding: 10px;
+    padding: 0 10px 10px;
     @media(max-width: 600px) {
       padding: 10px 5px ;
     }
@@ -92,6 +96,15 @@
       .unStared {
         background-position: left center;
       }
+    }
+    .address {
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    p {
+      color: #999;
+      margin-top: 5px;
+      font-size: 14px;
     }
     .user_thumb {
       float: left;

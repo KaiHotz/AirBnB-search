@@ -6,13 +6,24 @@
     height: 50px;
     margin: 0px 10px;
     div {
-      width: 35px;
-      height: 35px;
+      position: relative;
+      width: 30px;
+      height: 30px;
       margin: 0 auto;
-      text-align: center;
-      font-size: 16px;
-      padding-top: 10px;
       background-size: cover;
+      background-repeat: no-repeat;
+      margin-bottom: 5px;
+      p {
+        position: absolute;
+        font-size: 12px;
+        text-align: center;
+        font-weight: bold;
+        color: #000;
+        top: 25%;
+        left: 0;
+        right: 0;
+        transform: translateY(-30%)
+      }
       &.reviews {
         background-position: left center;
       }
@@ -25,6 +36,8 @@
     }
     p {
       text-align: center;
+      margin-top: 0;
+      color: #999;
     }
   }
 }

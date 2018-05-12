@@ -78,12 +78,12 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./config/webpack.config.js --mode development",
     "watch": "npm run start -- --watch",
     "lint": "standard",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "build": "webpack --mode production"
+    "build": "webpack --config ./config/webpack.config.js --mode production"
   }
 }

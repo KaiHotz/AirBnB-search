@@ -26,13 +26,13 @@ module.exports = {
     vendor: VENDOR_LIBS
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../build'),
     chunkFilename: '[name].[hash].js',
     filename: '[name].[hash].js'
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.resolve(__dirname, 'src'),
+    contentBase: path.resolve(__dirname, '../src'),
     hot: true,
     inline: true,
     port: 3000,
@@ -65,6 +65,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'AirBnB Search',
       template: 'src/index.html'
     }),
     new webpack.HotModuleReplacementPlugin(),

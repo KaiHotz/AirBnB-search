@@ -65,7 +65,8 @@
     "clean": "rimraf dist",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "watch": "npm run start -- --watch",
-    "lint": "eslint",
+    "lint": "standard",
+    "lint:fix": "npm run lint -- --fix",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
     "build": "webpack --mode production"

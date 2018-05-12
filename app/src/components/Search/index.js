@@ -53,7 +53,13 @@ class Search extends Component {
                 placeholder='City'
                 required
               />
-              <button onClick={handleSubmit}>Search</button>
+              <button onClick={handleSubmit}>
+                Search
+                <img
+                  src='assets/images/search.png'
+                  alt='search icon'
+                />
+              </button>
             </div>
             <div className='bookings'>
               <Form.DatePicker

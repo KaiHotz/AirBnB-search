@@ -7,12 +7,14 @@ const Button = ({
   onClick,
   type,
   imgSrc,
-  content
+  content,
+  disabled
 }) => (
   <button
-    className={cx('btn', className)}
+    className={cx('btn', {'diabled': disabled}, className)}
     onClick={onClick}
     type={type}
+    disabled={disabled}
   >
     {content}
     {
@@ -30,14 +32,16 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   type: PropTypes.string,
   imgSrc: PropTypes.string,
-  content: PropTypes.string
+  content: PropTypes.string,
+  disabled: PropTypes.bool
 }
 
 Button.defaultProps = {
   className: null,
   type: 'button',
   imgSrc: null,
-  content: null
+  content: null,
+  disabled: false
 }
 
 export default Button

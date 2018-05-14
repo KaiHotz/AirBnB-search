@@ -6,7 +6,7 @@ There are two methods for getting started with this repo.
 
 ```
   > git clone git@github.com:SpecialKcl/AirBnB-search.git
-  > cd AirBnB-search/app
+  > cd AirBnB-search
   > npm install
   > npm start
   > in your Browser open http://localhost:3000
@@ -16,7 +16,7 @@ There are two methods for getting started with this repo.
 Click [here](https://github.com/SpecialKcl/AirBnB-search.git) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 
 ```
-  > cd AirBnB-search/app
+  > cd AirBnB-search
   > npm install
   > npm start
   > in your Browser open http://localhost:3000

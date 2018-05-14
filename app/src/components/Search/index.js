@@ -46,7 +46,7 @@ class Search extends Component {
         validationSchema={this.getSchema()}
         onSubmit={this.onSubmit}
         render={({handleSubmit, values}) => (
-          <Form onSubmit={handleSubmit} className='search'>
+          <Form className='search'>
             <div className='location'>
               <Form.Input
                 name='location'

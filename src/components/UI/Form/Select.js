@@ -56,8 +56,7 @@ Select.propTypes = {
 }
 
 Select.defaultProps = {
-  label: null,
-  required: false
+  label: null
 }
 
 export default Select

@@ -1,25 +1,17 @@
-## Stack:
+## Resources:
+react, redux, webpack, recompose, classnames, fetch-jsonp, redux-promise, qs, yup, formik, momemt, react-datepicker
 
-- React
-- Redux
-- WebPack
-- Recompose
-- classnames
-- fetch-jsonp
-- Redux-promise
+### For testing:
+jasmine-expect, enyme, jest
 
-- Qs
-- Yup
-- Formik
-- Momemt
-- react-datepicker
+### Linting and code formating
+standardJs
 
-### Getting Started
+## Getting Started
 
 There are two methods for getting started with this repo.
 
-#### Familiar with Git?
-
+### Familiar with Git?
 ```
   > git clone git@github.com:SpecialKcl/AirBnB-search.git
   > cd AirBnB-search
@@ -28,9 +20,8 @@ There are two methods for getting started with this repo.
   > in your Browser open http://localhost:3000
 ```
 
-#### Not Familiar with Git?
+### Not Familiar with Git?
 Click [here](https://github.com/SpecialKcl/AirBnB-search.git) then download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
-
 ```
   > cd AirBnB-search
   > npm install

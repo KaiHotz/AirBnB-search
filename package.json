@@ -20,7 +20,6 @@
     "babel-eslint": "^8.2.3",
     "babel-jest": "^23.0.0-charlie.1",
     "babel-loader": "^7.1.4",
-    "babel-plugin-root-import": "^5.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",

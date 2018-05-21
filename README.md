@@ -1,3 +1,19 @@
+## Stack:
+
+- React
+- Redux
+- WebPack
+- Recompose
+- classnames
+- fetch-jsonp
+- Redux-promise
+
+- Qs
+- Yup
+- Formik
+- Momemt
+- react-datepicker
+
 ### Getting Started
 
 There are two methods for getting started with this repo.

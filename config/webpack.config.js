@@ -10,7 +10,6 @@ const VENDOR_LIBS = [
   'react-dom',
   'prop-types',
   'react-redux',
-  'react-router-dom',
   'react-datepicker',
   'classnames',
   'fetch-jsonp',

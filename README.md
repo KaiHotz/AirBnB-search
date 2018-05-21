@@ -2,7 +2,7 @@
 react, redux, webpack, recompose, classnames, fetch-jsonp, redux-promise, qs, yup, formik, momemt, react-datepicker
 
 ### For testing:
-jasmine-expect, enyme, jest
+jasmine-expect, enzyme, jest
 
 ### Linting and code formating
 standardJs

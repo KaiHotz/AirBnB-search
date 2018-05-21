@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
-const WithErrors = (WrappedComponent) => {
+const WithErrors = WrappedComponent => {
   return class ErrorBoundary extends Component {
     state = {
       error: null,
@@ -26,9 +26,11 @@ const WithErrors = (WrappedComponent) => {
               {errorInfo.componentStack}
             </details>
           </div>,
-        <WrappedComponent key='ok' {...this.props} />
-      ]
+        !error &&
+          <WrappedComponent key='ok' {...this.props} />
+      ].filter(Boolean)
     }
   }
 }
+
 export default WithErrors

@@ -10,7 +10,7 @@ export const fetchListings = () => {
   })
     .then(response => response.json())
     .then(json => json)
-    .catch((ex) => {
+    .catch(ex => {
       console.log('parsing failed', ex)
     })
   return {

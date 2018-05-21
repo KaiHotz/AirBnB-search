@@ -1,4 +1,4 @@
-## Resources:
+## Resources used:
 react, redux, webpack, recompose, classnames, fetch-jsonp, redux-promise, qs, yup, formik, momemt, react-datepicker
 
 ### For testing:

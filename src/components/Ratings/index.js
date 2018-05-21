@@ -5,11 +5,11 @@ import './styles.scss'
 const Ratings = (props) => (
   <div className='ratings'>
     {
-      Object.keys(props).map((key, i) => {
+      Object.keys(props).map(key => {
         if (props[key]) {
           return (
             <div
-              key={i}
+              key={key}
               className='ratings-item'
             >
               <div

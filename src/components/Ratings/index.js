@@ -6,7 +6,7 @@ const Ratings = (props) => (
   <div className='ratings'>
     {
       Object.keys(props).map((key, i) => {
-        if (props[key] || props[key] !== 0) {
+        if (props[key]) {
           return (
             <div
               key={i}

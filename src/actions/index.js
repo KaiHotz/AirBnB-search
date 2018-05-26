@@ -2,7 +2,7 @@ import fetchJsonp from 'fetch-jsonp'
 
 export const FETCH_LISTINGS = 'FETCH_LISTINGS'
 
-const ROOT_URL = 'http://assets.airbnb.com/frontend/search_results.js'
+const ROOT_URL = 'https://assets.airbnb.com/frontend/search_results.js'
 
 export const fetchListings = () => {
   const request = fetchJsonp(`${ROOT_URL}`, {

@@ -34,8 +34,9 @@
       }
     }
     button {
+      display: flex;
       flex-grow: 1;
-      position: relative;
+      justify-content: center;
       height: 42px;
       padding-bottom: 2px;
       background: #e61a84;
@@ -51,7 +52,6 @@
       img {
         margin-left: 15px;
         width: 20px;
-        position: absolute;
         @media (max-width: 520px) {
           display: none;
         }

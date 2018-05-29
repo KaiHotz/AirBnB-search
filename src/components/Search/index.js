@@ -72,8 +72,6 @@ class Search extends Component {
                 label='Check out'
                 required
               />
-            </div>
-            <div className='guests'>
               <Form.Select
                 label='Guests'
                 name='guests'

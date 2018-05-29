@@ -37,7 +37,7 @@ const Listing = ({
         <h2>
           {name}
           <span
-            style={{ backgroundImage: 'url(/assets/images/stars.png)' }}
+            style={{ backgroundImage: 'url(assets/images/stars.png)' }}
             className={favorited ? 'stared' : 'unStared'}
           />
         </h2>

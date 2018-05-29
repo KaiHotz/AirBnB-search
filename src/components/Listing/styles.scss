@@ -4,7 +4,7 @@
   padding: 15px;
   display: flex;
   border-bottom: 1px solid #c3c3c3;
-  @media (max-width: 980px) {
+  @media (max-width: 790px) {
     flex-direction: column;
     padding: 5px;
   }
@@ -71,12 +71,11 @@
   }
   &--info {
     padding: 0 10px 10px;
-    @media(max-width: 600px) {
+    @media(max-width: 790px) {
       padding: 10px 5px ;
     }
     h2 {
       display: flex;
-      align-items: center;
       margin: 0px 0px 2px;
       color: #1d95cb;
       @media (max-width: 600px) {
@@ -84,11 +83,17 @@
       }
       span {
         display: block;
-        height: 26px;
-        width: 22px;
+        height: 18px;
+        width: 16px;
         margin-left: 5px;
         overflow: hidden;
         background-repeat: no-repeat;
+        background-size: cover;
+        @media (max-width: 330px) {
+          height: 16px;
+          width: 18px;
+          margin-left: 0;
+        }
       }
       .stared {
         background-position: right center;

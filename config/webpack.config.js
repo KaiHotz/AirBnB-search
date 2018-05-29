@@ -4,12 +4,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const VENDOR_LIBS = [
-  'react',
-  'redux',
-  'recompose',
-  'react-dom',
-  'prop-types',
-  'react-redux',
   'react-datepicker',
   'classnames',
   'fetch-jsonp',

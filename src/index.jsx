@@ -12,7 +12,7 @@ const render = Component => {
     <Provider store={store}>
       <Component />
     </Provider>
-    , document.querySelector('.container')
+    , document.querySelector('.container'),
   )
 }
 

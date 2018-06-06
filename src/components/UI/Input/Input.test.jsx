@@ -5,7 +5,7 @@ import Input from './index'
 
 const baseProps = {
   name: 'input name',
-  onChange: jest.fn()
+  onChange: jest.fn(),
 }
 
 describe('<Input />', () => {
@@ -18,7 +18,7 @@ describe('<Input />', () => {
   it('should allow custom className', () => {
     const props = {
       ...baseProps,
-      className: 'Custom'
+      className: 'Custom',
     }
     const wrapper = shallow(<Input {...props} />)
 
@@ -28,7 +28,7 @@ describe('<Input />', () => {
   it('should have custom type', () => {
     const props = {
       ...baseProps,
-      type: 'text'
+      type: 'text',
     }
     const wrapper = mount(<Input {...props} />)
 
@@ -45,7 +45,7 @@ describe('<Input />', () => {
   it('should show error', () => {
     const props = {
       ...baseProps,
-      error: 'This is an ErrorMsg'
+      error: 'This is an ErrorMsg',
     }
     const wrapper = shallow(<Input {...props} />)
 

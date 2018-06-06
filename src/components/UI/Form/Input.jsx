@@ -22,18 +22,18 @@ const Input = ({ label, name, ...rest }, context) => {
 }
 
 Input.contextTypes = {
-  formik: PropTypes.shape({})
+  formik: PropTypes.shape({}),
 }
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
-  label: PropTypes.string
+  label: PropTypes.string,
 }
 
 Input.defaultProps = {
   type: 'text',
-  label: null
+  label: null,
 }
 
 export default Input

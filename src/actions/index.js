@@ -6,15 +6,16 @@ const ROOT_URL = 'https://assets.airbnb.com/frontend/search_results.js'
 
 export const fetchListings = () => {
   const request = fetchJsonp(`${ROOT_URL}`, {
-    jsonpCallbackFunction: 'search_results'
+    jsonpCallbackFunction: 'search_results',
   })
     .then(response => response.json())
     .then(json => json)
     .catch(ex => {
-      console.log('parsing failed', ex)
+      console.log('parsing failed', ex) // eslint-disable-line
     })
+
   return {
     type: FETCH_LISTINGS,
-    payload: request
+    payload: request,
   }
 }

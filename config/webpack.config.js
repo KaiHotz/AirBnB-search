@@ -1,7 +1,7 @@
-var webpack = require('webpack')
-var path = require('path')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var CopyWebpackPlugin = require('copy-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const VENDOR_LIBS = [
   'react-datepicker',
@@ -10,18 +10,18 @@ const VENDOR_LIBS = [
   'formik',
   'moment',
   'qs',
-  'yup'
+  'yup',
 ]
 
 module.exports = {
   entry: {
-    bundle: ['babel-polyfill', './src/index.js'],
-    vendor: VENDOR_LIBS
+    bundle: ['babel-polyfill', './src/index.jsx'],
+    vendor: VENDOR_LIBS,
   },
   output: {
     path: path.resolve(__dirname, '../build'),
     chunkFilename: '[name].[hash].js',
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -31,40 +31,47 @@ module.exports = {
     port: 3000,
     historyApiFallback: true,
     compress: true,
-    open: true
+    open: true,
   },
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.(js|jsx)$/,
+        use: 'eslint-loader',
+        exclude: /node_modules/,
+        include: path.src,
+      },
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
       {
         test: /\.(scss|sass|css)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
-        use: ['file-loader']
-      }
-    ]
+        use: ['file-loader'],
+      },
+    ],
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   optimization: {
-    runtimeChunk: true
+    runtimeChunk: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'AirBnB Search',
-      template: 'src/index.html'
+      template: 'src/index.html',
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new CopyWebpackPlugin([
-      { from: 'src/assets', to: 'assets' }
-    ])
-  ]
+      { from: 'src/assets', to: 'assets' },
+    ]),
+  ],
 }

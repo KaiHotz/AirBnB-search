@@ -6,6 +6,7 @@ import Select from './Select'
 
 const Form = ({ children, ...rest }, context) => {
   const { formik } = context
+
   return (
     <form onSubmit={formik.handleSubmit} {...rest}>
       {children}
@@ -14,16 +15,16 @@ const Form = ({ children, ...rest }, context) => {
 }
 
 Form.contextTypes = {
-  formik: PropTypes.shape({})
+  formik: PropTypes.shape({}),
 }
 
 Form.propTypes = {
   children: PropTypes.node.isRequired,
-  onSubmit: PropTypes.func
+  onSubmit: PropTypes.func,
 }
 
 Form.defaultProps = {
-  onSubmit: () => { }
+  onSubmit: () => { },
 }
 
 Form.Input = Input

@@ -9,10 +9,10 @@ const baseProps = {
   options: [
     { value: '0', label: 'Option 1' },
     { value: '1', label: 'Option 2' },
-    { value: '2', label: 'Option 3' }
+    { value: '2', label: 'Option 3' },
   ],
   selected: '',
-  onChange: jest.fn()
+  onChange: jest.fn(),
 }
 
 describe('<Select />', () => {
@@ -25,7 +25,7 @@ describe('<Select />', () => {
   it('should allow custom className', () => {
     const props = {
       ...baseProps,
-      className: 'customClass'
+      className: 'customClass',
     }
     const wrapper = shallow(<Select {...props} />)
 
@@ -35,7 +35,7 @@ describe('<Select />', () => {
   it('should show error', () => {
     const props = {
       ...baseProps,
-      error: 'This is an ErrorMsg'
+      error: 'This is an ErrorMsg',
     }
     const wrapper = shallow(<Select {...props} />)
 

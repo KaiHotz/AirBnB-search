@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme'
 import Button from './index'
 
 const baseProps = {
-  onClick: jest.fn()
+  onClick: jest.fn(),
 }
 
 describe('<Button />', () => {
@@ -17,7 +17,7 @@ describe('<Button />', () => {
     const props = {
       ...baseProps,
       imgSrc: 'assets/images/search.png',
-      content: 'Content'
+      content: 'Content',
     }
     const wrapper = mount(<Button {...props} />)
 
@@ -42,7 +42,7 @@ describe('<Button />', () => {
   it('should have custom type', () => {
     const props = {
       ...baseProps,
-      type: 'submit'
+      type: 'submit',
     }
     const wrapper = shallow(<Button {...props} />)
 
@@ -52,7 +52,7 @@ describe('<Button />', () => {
   it('should allow custom className', () => {
     const props = {
       ...baseProps,
-      className: 'Custom'
+      className: 'Custom',
     }
     const wrapper = shallow(<Button {...props} />)
 

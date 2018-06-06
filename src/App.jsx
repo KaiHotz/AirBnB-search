@@ -12,6 +12,4 @@ const App = () => (
   </Fragment>
 )
 
-export default compose(
-  WithErrors
-)(App)
+export default compose(WithErrors)(App)

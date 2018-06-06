@@ -14,7 +14,7 @@ const Input = ({
   className,
   ...rest
 }) => (
-  <div className={cx('input-wrapper', className, {'error': error})}>
+  <div className={cx('input-wrapper', className, { error })}>
     {
       label &&
       <label htmlFor={name}>
@@ -42,7 +42,7 @@ Input.propTypes = {
   className: PropTypes.string,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 }
 
 Input.defaultProps = {
@@ -52,7 +52,7 @@ Input.defaultProps = {
   placeholder: null,
   className: null,
   disabled: false,
-  required: false
+  required: false,
 }
 
 export default Input

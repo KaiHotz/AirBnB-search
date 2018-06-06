@@ -12,7 +12,7 @@ class Select extends Component {
     formik.setFieldTouched(name, true)
   }
 
-  render () {
+  render() {
     const {
       label,
       name,
@@ -22,6 +22,7 @@ class Select extends Component {
     const { formik } = this.context
     const { touched, errors, values } = formik
     const error = get(errors, name)
+
     return (
       <SelectComponent
         name={name}
@@ -37,7 +38,7 @@ class Select extends Component {
 }
 
 Select.contextTypes = {
-  formik: PropTypes.shape({})
+  formik: PropTypes.shape({}),
 }
 
 Select.propTypes = {
@@ -45,18 +46,18 @@ Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.number
+      PropTypes.number,
     ]).isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.number
-    ]).isRequired
+      PropTypes.number,
+    ]).isRequired,
   })).isRequired,
-  label: PropTypes.string
+  label: PropTypes.string,
 }
 
 Select.defaultProps = {
-  label: null
+  label: null,
 }
 
 export default Select

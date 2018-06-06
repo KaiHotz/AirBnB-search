@@ -8,10 +8,10 @@ const Button = ({
   type,
   imgSrc,
   content,
-  disabled
+  disabled,
 }) => (
   <button
-    className={cx('btn', {'diabled': disabled}, className)}
+    className={cx('btn', { diabled: disabled }, className)}
     onClick={onClick}
     type={type}
     disabled={disabled}
@@ -21,7 +21,7 @@ const Button = ({
       imgSrc &&
         <img
           src={imgSrc}
-          alt='btn icon'
+          alt="btn icon"
         />
     }
   </button>
@@ -33,7 +33,7 @@ Button.propTypes = {
   type: PropTypes.string,
   imgSrc: PropTypes.string,
   content: PropTypes.string,
-  disabled: PropTypes.bool
+  disabled: PropTypes.bool,
 }
 
 Button.defaultProps = {
@@ -41,7 +41,7 @@ Button.defaultProps = {
   type: 'button',
   imgSrc: null,
   content: null,
-  disabled: false
+  disabled: false,
 }
 
 export default Button

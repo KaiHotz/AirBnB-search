@@ -12,7 +12,7 @@ class DatePicker extends Component {
     formik.setFieldTouched(name, true)
   }
 
-  render () {
+  render() {
     const {
       disabled,
       label,
@@ -43,7 +43,7 @@ class DatePicker extends Component {
 }
 
 DatePicker.contextTypes = {
-  formik: PropTypes.shape({})
+  formik: PropTypes.shape({}),
 }
 
 DatePicker.propTypes = {
@@ -51,14 +51,14 @@ DatePicker.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
-  required: PropTypes.bool
+  required: PropTypes.bool,
 }
 
 DatePicker.defaultProps = {
   label: null,
   placeholder: 'DD.MM.YYYY',
   disabled: false,
-  required: false
+  required: false,
 }
 
 export default DatePicker

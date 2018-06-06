@@ -17,7 +17,7 @@ class DatePicker extends Component {
     required: PropTypes.bool,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   }
 
   static defaultProps = {
@@ -29,7 +29,7 @@ class DatePicker extends Component {
     disabled: false,
     required: false,
     value: null,
-    className: null
+    className: null,
   }
 
   handleChangeRaw = e => {
@@ -42,20 +42,21 @@ class DatePicker extends Component {
     const { value } = args.target
     if (!validChars.test(value)) {
       args.preventDefault()
+
       return
     }
 
     const momentDate = moment(
       value,
       ['DD.MM.YYYY', 'D.M.YYYY'],
-      true
+      true,
     )
 
     event({
       target: {
         name: this.props.name,
-        value: momentDate.isValid() ? momentDate.format('YYYY-MM-DD') : ''
-      }
+        value: momentDate.isValid() ? momentDate.format('YYYY-MM-DD') : '',
+      },
     })
   }
 
@@ -63,16 +64,16 @@ class DatePicker extends Component {
     this.props.onChange({
       target: {
         name: this.props.name,
-        value: momentDate ? momentDate.format('YYYY-MM-DD') : ''
-      }
+        value: momentDate ? momentDate.format('YYYY-MM-DD') : '',
+      },
     })
   }
 
-  handleFocus = name => {
+  handleFocus = name => () => {
     document.getElementById(name).focus()
   }
 
-  render () {
+  render() {
     const {
       disabled,
       error,
@@ -90,12 +91,14 @@ class DatePicker extends Component {
     const momentDate = moment(value)
 
     return (
-      <div className={cx('datePicker-wrapper', className, {'error': error})}>
+      <div className={cx('datePicker-wrapper', className, { error })}>
         {
           label &&
             <label
               htmlFor={name}
-              onClick={() => this.handleFocus(name)}
+              onClick={this.handleFocus(name)}
+              onKeyPress={this.handleFocus(name)}
+              role="none"
             >
               {`${label}${required ? ' *' : ''}`}
             </label>

@@ -11,9 +11,9 @@ const Select = ({
   options,
   required,
   error,
-  className
+  className,
 }) => (
-  <div className={cx('select-wrapper', className, {'error': error})}>
+  <div className={cx('select-wrapper', className, { error })}>
     {
       label &&
         <label htmlFor={name}>
@@ -28,21 +28,19 @@ const Select = ({
     >
       {
         placeholder &&
-          <option value=''>
+          <option value="">
             {placeholder}
           </option>
       }
       {
-        options.map(opt => {
-          return (
-            <option
-              key={opt.label}
-              value={opt.value}
-            >
-              {opt.label}
-            </option>
-          )
-        })
+        options.map(opt => (
+          <option
+            key={opt.label}
+            value={opt.value}
+          >
+            {opt.label}
+          </option>
+          ))
       }
     </select>
   </div>
@@ -53,23 +51,23 @@ Select.propTypes = {
   name: PropTypes.string.isRequired,
   selected: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.number
+    PropTypes.number,
   ]).isRequired,
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.shape({
     label: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.number
+      PropTypes.number,
     ]).isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.number
-    ]).isRequired
+      PropTypes.number,
+    ]).isRequired,
   })).isRequired,
   required: PropTypes.bool,
   error: PropTypes.string,
-  className: PropTypes.string
+  className: PropTypes.string,
 }
 
 Select.defaultProps = {
@@ -77,7 +75,7 @@ Select.defaultProps = {
   placeholder: null,
   required: false,
   error: null,
-  className: null
+  className: null,
 }
 
 export default Select

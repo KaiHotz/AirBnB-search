@@ -1,16 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './styles.scss'
 
 const Ratings = props => (
-  <div className='ratings'>
+  <div className="ratings">
     {
       Object.keys(props).map(key => {
         if (props[key]) {
           return (
             <div
               key={key}
-              className='ratings-item'
+              className="ratings-item"
             >
               <div
                 className={key}
@@ -26,17 +25,4 @@ const Ratings = props => (
     }
   </div>
 )
-
-Ratings.propTypes = {
-  friends: PropTypes.number,
-  reviews: PropTypes.number,
-  superhost: PropTypes.bool
-}
-
-Ratings.defaultProps = {
-  friends: 0,
-  reviews: 0,
-  superhost: false
-}
-
 export default Ratings

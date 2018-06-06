@@ -9,14 +9,14 @@ import './styles.scss'
 class Listings extends Component {
   static propTypes = {
     listings: PropTypes.array,
-    fetchListings: PropTypes.func.isRequired
+    fetchListings: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
-    listings: []
+    listings: [],
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.props.fetchListings()
   }
 
@@ -24,15 +24,16 @@ class Listings extends Component {
     window.open(`https://airbnb.com/rooms/${id}`, '_blank')
   }
 
-  render () {
+  render() {
     const { listings } = this.props
     if (!listings || listings.length === 0) return <Loader />
+
     return (
-      <div className='listings'>
-        <div className='listings-total'>
+      <div className="listings">
+        <div className="listings-total">
           {this.props.listings.length} Results
         </div>
-        <div className='listings-list'>
+        <div className="listings-list">
           <ul>
             {
               listings &&
@@ -53,7 +54,7 @@ class Listings extends Component {
 }
 
 const mapStateToProps = ({ listings }) => ({
-  listings
+  listings,
 })
 
 export default connect(mapStateToProps, { fetchListings })(Listings)

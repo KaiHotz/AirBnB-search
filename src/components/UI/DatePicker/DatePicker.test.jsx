@@ -5,7 +5,7 @@ import DatePicker from './index'
 
 const baseProps = {
   name: 'DatePicker',
-  onChange: jest.fn()
+  onChange: jest.fn(),
 }
 
 describe('<DatePicker />', () => {
@@ -18,7 +18,7 @@ describe('<DatePicker />', () => {
   it('should allow custom className', () => {
     const props = {
       ...baseProps,
-      className: 'customDatepicker'
+      className: 'customDatepicker',
     }
     const wrapper = mount(<DatePicker {...props} />)
 
@@ -28,7 +28,7 @@ describe('<DatePicker />', () => {
   it('should call onChange', () => {
     const props = {
       ...baseProps,
-      onChange: jest.fn()
+      onChange: jest.fn(),
     }
     const wrapper = mount(<DatePicker {...props} />)
 
@@ -40,7 +40,7 @@ describe('<DatePicker />', () => {
   it('should show error', () => {
     const props = {
       ...baseProps,
-      error: 'This is an ErrorMsg'
+      error: 'This is an ErrorMsg',
     }
     const wrapper = shallow(<DatePicker {...props} />)
 

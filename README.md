@@ -1,5 +1,5 @@
 ## Resources used:
-react, redux, webpack, recompose, classnames, fetch-jsonp, redux-promise, qs, yup, formik, momemt, react-datepicker
+react, redux, webpack, recompose, classnames, fetch-jsonp, redux-promise, qs, yup, formik, momemt, react-datepicker, Eslint
 
 ### Live Demo
 Click [here](https://kaihotz.github.io/AirBnB-search/)
@@ -7,8 +7,8 @@ Click [here](https://kaihotz.github.io/AirBnB-search/)
 ### For testing:
 jasmine-expect, enzyme, jest
 
-### Linting and code formating
-standardJs
+### Linting
+Eslint with AirBnB config
 
 ## Getting Started
 

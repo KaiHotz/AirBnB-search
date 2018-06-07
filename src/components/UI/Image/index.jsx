@@ -12,6 +12,10 @@ class Image extends Component {
     alt: 'Image',
   }
 
+  setImgRef = element => {
+    this.img = element
+  }
+
   changeSrc = newSrc => () => {
     this.img.src = newSrc
   }
@@ -25,7 +29,7 @@ class Image extends Component {
       <img
         src={src}
         onError={this.changeSrc(fallbackSrc)}
-        ref={el => (this.img = el)}
+        ref={this.setImgRef}
         alt={alt}
         {...rest}
       />

@@ -14,7 +14,7 @@
     "lint": "esw --ext .jsx --ext .js --color",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
-    "test:watch": "npm run test -- --watch",
+    "test:coverage": "npm run test -- --coverage --colors",
     "build": "npm run clean && webpack --config ./config/webpack.config.js --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -89,8 +89,7 @@
   },
   "babel": {
     "presets": [
-      "env",
-      "react"
+      "react-app"
     ]
   }
 }

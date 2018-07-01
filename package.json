@@ -10,7 +10,6 @@
   "scripts": {
     "clean": "rimraf build",
     "start": "webpack-dev-server --config ./config/webpack.config.dev.js --mode development",
-    "watch": "npm run start -- --watch",
     "lint": "esw --ext .jsx --ext .js --color",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",

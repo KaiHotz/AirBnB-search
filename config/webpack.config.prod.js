@@ -60,7 +60,9 @@ module.exports = {
               },
             },
           },
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+          },
         ],
       },
       {

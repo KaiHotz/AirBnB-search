@@ -26,8 +26,16 @@
   "rules": {
     "no-shadow": 0,
     "newline-before-return": "error",
+    "import/no-extraneous-dependencies": 0,
     "react/forbid-prop-types": 0,
     "array-callback-return": 0,
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxBOF": 1
+      }
+    ],
     "import/no-unresolved": [
       2,
       {

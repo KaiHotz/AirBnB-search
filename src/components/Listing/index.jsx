@@ -15,13 +15,13 @@ const Listing = ({
   reviews_count,
   friends,
   price_formatted,
-  onClick,
+  url,
 }) => (
-  <li
+  <a
     className="listings-list-item"
-    onClick={onClick}
-    onKeyPress={onClick}
-    role="none"
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
   >
     <div className="listings-list-item--thumb">
       <Image
@@ -56,7 +56,7 @@ const Listing = ({
       <h1>{price_formatted}</h1>
       <p>Per Night</p>
     </div>
-  </li>
+  </a>
 )
 
 Listing.propTypes = {
@@ -70,7 +70,7 @@ Listing.propTypes = {
   favorited: PropTypes.bool.isRequired,
   super_host: PropTypes.bool.isRequired,
   address: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  url: PropTypes.string.isRequired,
 }
 
 export default Listing

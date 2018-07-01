@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import _ from 'lodash'
 import { fetchListings } from '../../actions'
 import Loader from '../../components/UI/Loader'
 import Listing from '../../components/Listing'
@@ -20,13 +21,9 @@ class Listings extends Component {
     this.props.fetchListings()
   }
 
-  handleClick = id => () => {
-    window.open(`https://airbnb.com/rooms/${id}`, '_blank')
-  }
-
   render() {
     const { listings } = this.props
-    if (!listings || listings.length === 0) return <Loader />
+    if (!listings || !listings.length) return <Loader />
 
     return (
       <div className="listings">
@@ -34,19 +31,16 @@ class Listings extends Component {
           {this.props.listings.length} Results
         </div>
         <div className="listings-list">
-          <ul>
-            {
-              listings &&
-                listings.map((listing, index) => (
-                  <Listing
-                    key={listing.id}
-                    index={index}
-                    onClick={this.handleClick(listing.id)}
-                    {...listing}
-                  />
-                ))
-            }
-          </ul>
+          {
+            _.sortBy(listings, 'name').map((listing, index) => (
+              <Listing
+                key={listing.id}
+                index={index}
+                url={`https://airbnb.com/rooms/${listing.id}`}
+                {...listing}
+              />
+            ))
+          }
         </div>
       </div>
     )

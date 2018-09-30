@@ -10,8 +10,8 @@ const render = Component => {
   ReactDOM.render(
     <Provider store={store}>
       <Component />
-    </Provider>
-    , document.querySelector('.container'),
+    </Provider>,
+    document.querySelector('.container'),
   )
 }
 

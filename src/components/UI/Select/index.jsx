@@ -15,10 +15,12 @@ const Select = ({
 }) => (
   <div className={cx('select-wrapper', className, { error })}>
     {
-      label &&
+      label
+        && (
         <label htmlFor={name}>
           {`${label}${required ? ' *' : ''}`}
         </label>
+        )
     }
     <select
       id={name}
@@ -27,10 +29,12 @@ const Select = ({
       onChange={onChange}
     >
       {
-        placeholder &&
+        placeholder
+          && (
           <option value="">
             {placeholder}
           </option>
+          )
       }
       {
         options.map(opt => (
@@ -40,7 +44,7 @@ const Select = ({
           >
             {opt.label}
           </option>
-          ))
+        ))
       }
     </select>
   </div>

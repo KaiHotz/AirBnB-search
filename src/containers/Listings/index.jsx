@@ -18,7 +18,8 @@ class Listings extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchListings()
+    const { fetchListings } = this.props
+    fetchListings()
   }
 
   render() {
@@ -28,7 +29,9 @@ class Listings extends Component {
     return (
       <div className="listings">
         <div className="listings-total">
-          {this.props.listings.length} Results
+          {listings.length}
+          {' '}
+          Results
         </div>
         <div className="listings-list">
           {

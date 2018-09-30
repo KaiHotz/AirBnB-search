@@ -18,11 +18,13 @@ const Button = ({
   >
     {content}
     {
-      imgSrc &&
+      imgSrc
+        && (
         <img
           src={imgSrc}
           alt="btn icon"
         />
+        )
     }
   </button>
 )

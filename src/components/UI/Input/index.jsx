@@ -16,10 +16,12 @@ const Input = ({
 }) => (
   <div className={cx('input-wrapper', className, { error })}>
     {
-      label &&
+      label
+      && (
       <label htmlFor={name}>
         {`${label}${required ? ' *' : ''}`}
       </label>
+      )
     }
     <input
       id={name}

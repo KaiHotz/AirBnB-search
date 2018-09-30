@@ -93,7 +93,8 @@ class DatePicker extends Component {
     return (
       <div className={cx('datePicker-wrapper', className, { error })}>
         {
-          label &&
+          label
+            && (
             <label
               htmlFor={name}
               onClick={this.handleFocus(name)}
@@ -102,6 +103,7 @@ class DatePicker extends Component {
             >
               {`${label}${required ? ' *' : ''}`}
             </label>
+            )
         }
         <DatePickerCmp
           id={name}

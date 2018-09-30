@@ -17,17 +17,19 @@ const WithErrors = WrappedComponent => class ErrorBoundary extends Component {
       const { error, errorInfo } = this.state
 
       return [
-        error &&
-          <div key="errors">
-            <h2>Something went wrong.</h2>
-            <details style={{ whiteSpace: 'pre-wrap' }}>
-              {error.toString()}
-              <br />
-              {errorInfo.componentStack}
-            </details>
-          </div>,
-        !error &&
-          <WrappedComponent key="ok" {...this.props} />,
+        error
+          && (
+            <div key="errors">
+              <h2>Something went wrong.</h2>
+              <details style={{ whiteSpace: 'pre-wrap' }}>
+                {error.toString()}
+                <br />
+                {errorInfo.componentStack}
+              </details>
+            </div>
+          ),
+        !error
+          && <WrappedComponent key="ok" {...this.props} />,
       ].filter(Boolean)
     }
 }

@@ -1,41 +1,50 @@
 {
   "presets": [
-    "env",
-    "react"
+    "@babel/preset-env",
+    "@babel/preset-react"
   ],
   "plugins": [
-    "transform-object-rest-spread",
-    "transform-class-properties"
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties"
   ],
   "env": {
     "production": {
       "presets": [
-        ["env", {
-          "targets": {
-            "browsers": "last 2 Chrome versions"
-          },
-          "useBuiltIns": true
-        }]
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": "last 2 Chrome versions"
+            },
+            "useBuiltIns": "entry"
+          }
+        ]
       ]
     },
     "development": {
       "presets": [
-        ["env", {
-          "targets": {
-            "browsers": "last 2 Chrome versions"
-          },
-          "useBuiltIns": true
-        }]
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "browsers": "last 2 Chrome versions"
+            },
+            "useBuiltIns": "entry"
+          }
+        ]
       ]
     },
     "test": {
       "presets": [
-        ["env", {
-          "targets": {
-            "node": "current"
-          },
-          "useBuiltIns": true
-        }]
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            },
+            "useBuiltIns": "entry"
+          }
+        ]
       ]
     }
   }

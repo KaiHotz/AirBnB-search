@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { get } from '../../../utils/helper'
+import { connect, getIn } from 'formik'
 import DatePickerComponent from '../DatePicker'
 
 class DatePicker extends Component {
   onChange = event => {
-    const { formik } = this.context
+    const { formik } = this.props
     const { name, value } = event.target
 
     formik.setFieldValue(name, value)
@@ -19,18 +19,18 @@ class DatePicker extends Component {
       required,
       name,
       placeholder,
+      formik,
       ...rest
     } = this.props
-    const { formik } = this.context
     const { touched, errors, values } = formik
-    const error = get(errors, name)
+    const error = getIn(errors, name)
 
     return (
       <DatePickerComponent
         name={name}
         label={label}
-        value={get(values, name)}
-        error={get(touched, name) && error}
+        value={getIn(values, name)}
+        error={getIn(touched, name) && error}
         placeholder={placeholder}
         disabled={disabled}
         required={required}
@@ -40,10 +40,6 @@ class DatePicker extends Component {
       />
     )
   }
-}
-
-DatePicker.contextTypes = {
-  formik: PropTypes.shape({}),
 }
 
 DatePicker.propTypes = {
@@ -61,4 +57,4 @@ DatePicker.defaultProps = {
   required: false,
 }
 
-export default DatePicker
+export default connect(DatePicker)

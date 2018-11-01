@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { connect, getIn } from 'formik'
 import SelectComponent from '../Select'
-import { get } from '../../../utils/helper'
 
 class Select extends Component {
   onChange = event => {
-    const { formik } = this.context
+    const { formik } = this.props
     const { name, value } = event.target
 
     formik.setFieldValue(name, value)
@@ -17,28 +17,24 @@ class Select extends Component {
       label,
       name,
       options,
+      formik,
       ...rest
     } = this.props
-    const { formik } = this.context
     const { touched, errors, values } = formik
-    const error = get(errors, name)
+    const error = getIn(errors, name)
 
     return (
       <SelectComponent
         name={name}
         label={label}
         options={options}
-        selected={get(values, name)}
-        error={get(touched, name) && error}
+        selected={getIn(values, name)}
+        error={getIn(touched, name) && error}
         onChange={this.onChange}
         {...rest}
       />
     )
   }
-}
-
-Select.contextTypes = {
-  formik: PropTypes.shape({}),
 }
 
 Select.propTypes = {
@@ -60,4 +56,4 @@ Select.defaultProps = {
   label: null,
 }
 
-export default Select
+export default connect(Select)

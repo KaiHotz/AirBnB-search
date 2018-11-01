@@ -1,19 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect, getIn } from 'formik'
 import InputField from '../Input'
-import { get } from '../../../utils/helper'
 
-const Input = ({ label, name, ...rest }, context) => {
-  const { formik } = context
+const Input = ({
+  label, name, formik, ...rest
+}) => {
   const { touched, errors, values } = formik
-  const error = get(errors, name)
+  const error = getIn(errors, name)
 
   return (
     <InputField
       name={name}
       label={label}
-      value={get(values, name, '')}
-      error={get(touched, name) && error}
+      value={getIn(values, name, '')}
+      error={getIn(touched, name) && error}
       onChange={formik.handleChange}
       onBlur={formik.handleBlur}
       {...rest}
@@ -36,4 +37,4 @@ Input.defaultProps = {
   label: null,
 }
 
-export default Input
+export default connect(Input)

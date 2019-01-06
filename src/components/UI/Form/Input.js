@@ -22,14 +22,11 @@ const Input = ({
   )
 }
 
-Input.contextTypes = {
-  formik: PropTypes.shape({}),
-}
-
 Input.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   label: PropTypes.string,
+  formik: PropTypes.object.isRequired,
 }
 
 Input.defaultProps = {

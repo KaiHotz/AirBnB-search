@@ -5,8 +5,8 @@ import DatePickerComponent from '../DatePicker'
 
 class DatePicker extends Component {
   onChange = event => {
-    const { formik } = this.props
-    const { name, value } = event.target
+    const { formik, name } = this.props
+    const { value } = event.target
 
     formik.setFieldValue(name, value)
     formik.setFieldTouched(name, true)
@@ -48,6 +48,7 @@ DatePicker.propTypes = {
   placeholder: PropTypes.string,
   disabled: PropTypes.bool,
   required: PropTypes.bool,
+  formik: PropTypes.object.isRequired,
 }
 
 DatePicker.defaultProps = {

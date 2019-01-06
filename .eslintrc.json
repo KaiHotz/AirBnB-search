@@ -25,13 +25,28 @@
   },
   "rules": {
     "no-shadow": 0,
+    "camelcase": 0,
     "newline-before-return": "error",
     "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
     "react/forbid-prop-types": 0,
+    "global-require": 0,
     "array-callback-return": 0,
-    "react/destructuring-assignment": 0,
+    "consistent-return": 0,
     "react/button-has-type": 0,
+    "react/destructuring-assignment": 0,
+    "jsx-a11y/label-has-for": 0,
     "jsx-a11y/no-interactive-element-to-noninteractive-role": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "no-multiple-empty-lines": [
       "error",
       {
@@ -39,28 +54,6 @@
         "maxBOF": 1
       }
     ],
-    "import/no-unresolved": [
-      2,
-      {
-        "caseSensitive": false
-      }
-    ],
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
-    },
-    "consistent-return": 0,
-    "no-return-assign": [
-      2,
-      "except-parens"
-    ],
-    "no-invalid-this": 0,
-    "global-require": 0,
-    "camelcase": 0,
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
@@ -86,16 +79,6 @@
       "never"
     ],
     "max-len": 0,
-    "no-underscore-dangle": 0,
-    "jsx-a11y/label-has-for": [
-      2,
-      {
-        "required": {
-          "every": [
-            "id"
-          ]
-        }
-      }
-    ]
+    "no-underscore-dangle": 0
   }
 }

@@ -15,6 +15,7 @@ const Form = ({ children, formik, ...rest }) => (
 Form.propTypes = {
   children: PropTypes.node.isRequired,
   onSubmit: PropTypes.func,
+  formik: PropTypes.object.isRequired,
 }
 
 Form.defaultProps = {

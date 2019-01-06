@@ -1,5 +1,5 @@
 import React from 'react'
-import image from '../../../assets/images/loading_animation_circle.svg'
+import image from './loading_animation_circle.svg'
 import './styles.scss'
 
 const Loader = () => (

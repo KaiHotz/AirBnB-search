@@ -50,6 +50,7 @@ Select.propTypes = {
     ]).isRequired,
   })).isRequired,
   label: PropTypes.string,
+  formik: PropTypes.object.isRequired,
 }
 
 Select.defaultProps = {

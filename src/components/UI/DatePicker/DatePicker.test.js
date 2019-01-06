@@ -25,18 +25,6 @@ describe('<DatePicker />', () => {
     expect(wrapper.hasClass(props.className)).toBe(true)
   })
 
-  it('should call onChange', () => {
-    const props = {
-      ...baseProps,
-      onChange: jest.fn(),
-    }
-    const wrapper = mount(<DatePicker {...props} />)
-
-    wrapper.find('input').simulate('change')
-
-    expect(props.onChange).toHaveBeenCalled()
-  })
-
   it('should show error', () => {
     const props = {
       ...baseProps,

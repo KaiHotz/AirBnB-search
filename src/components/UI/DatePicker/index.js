@@ -32,22 +32,12 @@ class DatePicker extends Component {
     className: null,
   }
 
-  handleChangeRaw = e => {
-    this.handleUpdate(e, this.props.onChange)
-  }
-
   handleUpdate = (args, event) => {
-    // eslint-disable-next-line
-    const validChars = /^\d{0,2}[.\/]{0,1}\d{0,2}[.\/]{0,1}\d{0,4}$/
-    const { value } = args.target
-    if (!validChars.test(value)) {
-      args.preventDefault()
-
-      return
-    }
+    const { _d, _isValid } = args
+    if (!_isValid) return
 
     const momentDate = moment(
-      value,
+      _d,
       ['DD.MM.YYYY', 'D.M.YYYY'],
       true,
     )
@@ -58,6 +48,10 @@ class DatePicker extends Component {
         value: momentDate.isValid() ? momentDate.format('YYYY-MM-DD') : '',
       },
     })
+  }
+
+  handleChangeRaw = e => {
+    this.handleUpdate(e, this.props.onChange)
   }
 
   handleChange = momentDate => {
@@ -94,7 +88,7 @@ class DatePicker extends Component {
       <div className={cx('datePicker-wrapper', className, { error })}>
         {
           label
-            && (
+          && (
             <label
               htmlFor={name}
               onClick={this.handleFocus(name)}
@@ -103,7 +97,7 @@ class DatePicker extends Component {
             >
               {`${label}${required ? ' *' : ''}`}
             </label>
-            )
+          )
         }
         <DatePickerCmp
           id={name}

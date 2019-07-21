@@ -18,8 +18,8 @@ There are two methods for getting started with this repo.
 ```
   > git clone git@github.com:KaiHotz/AirBnB-search.git
   > cd AirBnB-search
-  > yarn install
-  > yarn start
+  > npm install
+  > npm start
   > in your Browser open http://localhost:3000
 ```
 
@@ -27,12 +27,12 @@ There are two methods for getting started with this repo.
 Click [here](https://github.com/KaiHotz/AirBnB-search/archive/master.zip) to download the .zip file.  Extract the contents of the zip file, then open your terminal, change to the project directory, and:
 ```
   > cd AirBnB-search
-  > yarn install
-  > yarn start
+  > npm install
+  > npm start
   > in your Browser open http://localhost:3000
 ```
 
 #### To run Test
 ```
-  > yarn test
+  > npm run test
 ```

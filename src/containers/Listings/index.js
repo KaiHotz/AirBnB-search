@@ -8,15 +8,6 @@ import Listing from '../../components/Listing'
 import './styles.scss'
 
 class Listings extends Component {
-  static propTypes = {
-    listings: PropTypes.array,
-    fetchListings: PropTypes.func.isRequired,
-  }
-
-  static defaultProps = {
-    listings: [],
-  }
-
   componentDidMount() {
     const { fetchListings } = this.props
     fetchListings()
@@ -48,6 +39,15 @@ class Listings extends Component {
       </div>
     )
   }
+}
+
+Listings.propTypes = {
+  listings: PropTypes.array,
+  fetchListings: PropTypes.func.isRequired,
+}
+
+Listings.defaultProps = {
+  listings: [],
 }
 
 const mapStateToProps = ({ listings }) => ({

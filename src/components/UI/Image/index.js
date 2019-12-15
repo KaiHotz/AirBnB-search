@@ -2,16 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 class Image extends Component {
-  static propTypes = {
-    src: PropTypes.string.isRequired,
-    fallbackSrc: PropTypes.string.isRequired,
-    alt: PropTypes.string,
-  }
-
-  static defaultProps = {
-    alt: 'Image',
-  }
-
   setImgRef = element => {
     this.img = element
   }
@@ -35,6 +25,16 @@ class Image extends Component {
       />
     )
   }
+}
+
+Image.propTypes = {
+  src: PropTypes.string.isRequired,
+  fallbackSrc: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+}
+
+Image.defaultProps = {
+  alt: 'Image',
 }
 
 export default Image

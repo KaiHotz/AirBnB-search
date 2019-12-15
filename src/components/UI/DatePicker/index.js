@@ -6,32 +6,6 @@ import cx from 'classnames'
 import 'react-datepicker/dist/react-datepicker.css'
 
 class DatePicker extends Component {
-  static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired,
-    label: PropTypes.string,
-    placeholder: PropTypes.string,
-    className: PropTypes.string,
-    error: PropTypes.string,
-    disabled: PropTypes.bool,
-    required: PropTypes.bool,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  }
-
-  static defaultProps = {
-    minDate: new Date().getTime(),
-    maxDate: null,
-    label: null,
-    placeholder: 'DD.MM.YYYY',
-    error: null,
-    disabled: false,
-    required: false,
-    value: null,
-    className: null,
-  }
-
   handleUpdate = (args, event) => {
     const { _d, _isValid } = args
     if (!_isValid) return
@@ -117,6 +91,32 @@ class DatePicker extends Component {
       </div>
     )
   }
+}
+
+DatePicker.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  className: PropTypes.string,
+  error: PropTypes.string,
+  disabled: PropTypes.bool,
+  required: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+}
+
+DatePicker.defaultProps = {
+  minDate: new Date().getTime(),
+  maxDate: null,
+  label: null,
+  placeholder: 'DD.MM.YYYY',
+  error: null,
+  disabled: false,
+  required: false,
+  value: null,
+  className: null,
 }
 
 export default DatePicker

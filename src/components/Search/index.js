@@ -46,43 +46,46 @@ class Search extends Component {
         }}
         validationSchema={this.getSchema()}
         onSubmit={this.onSubmit}
-        render={({ handleSubmit }) => (
-          <Form className="search">
-            <div className="location">
-              <Form.Input
-                name="location"
-                placeholder="City"
-                required
-              />
-              <Button
-                onClick={handleSubmit}
-                content="Search"
-                imgSrc="assets/images/search.png"
-              />
-            </div>
-            <div className="bookings">
-              <Form.DatePicker
-                className="search-booking--date-picker"
-                name="checkin"
-                label="Check in"
-                required
-              />
-              <Form.DatePicker
-                className="search-booking--date-picker"
-                name="checkout"
-                label="Check out"
-                required
-              />
-              <Form.Select
-                label="Guests"
-                name="guests"
-                required
-                options={this.handleOptions()}
-              />
-            </div>
-          </Form>
-        )}
-      />
+      >
+        {
+          ({ handleSubmit }) => (
+            <Form className="search">
+              <div className="location">
+                <Form.Input
+                  name="location"
+                  placeholder="City"
+                  required
+                />
+                <Button
+                  onClick={handleSubmit}
+                  content="Search"
+                  imgSrc="assets/images/search.png"
+                />
+              </div>
+              <div className="bookings">
+                <Form.DatePicker
+                  className="search-booking--date-picker"
+                  name="checkin"
+                  label="Check in"
+                  required
+                />
+                <Form.DatePicker
+                  className="search-booking--date-picker"
+                  name="checkout"
+                  label="Check out"
+                  required
+                />
+                <Form.Select
+                  label="Guests"
+                  name="guests"
+                  required
+                  options={this.handleOptions()}
+                />
+              </div>
+            </Form>
+          )
+        }
+      </Formik>
     )
   }
 }
